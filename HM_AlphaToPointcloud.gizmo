@@ -1,0 +1,94 @@
+Group {
+name HM_AlphaToPointcloud
+ tile_color 0x1d4600ff
+ lock_connections true
+ addUserKnob {20 User}
+ addUserKnob {41 detail l "point detail" T PositionToPoints1.detail}
+ addUserKnob {41 pointSize l "point size" T PositionToPoints1.pointSize}
+ addUserKnob {26 ""}
+ addUserKnob {41 file_menu l @FolderIcon T TransformGeo1.file_menu}
+ addUserKnob {41 snap_menu l @AxisIcon -STARTLINE T TransformGeo1.snap_menu}
+ addUserKnob {41 xform_order l "Transform Order" T TransformGeo1.xform_order}
+ addUserKnob {41 rot_order l "Rotation Order" T TransformGeo1.rot_order}
+ addUserKnob {41 translate l Translate T TransformGeo1.translate}
+ addUserKnob {41 rotate l Rotate T TransformGeo1.rotate}
+ addUserKnob {41 scaling l Scale T TransformGeo1.scaling}
+ addUserKnob {41 uniform_scale l "Uniform Scale" T TransformGeo1.uniform_scale}
+ addUserKnob {41 skew l Skew T TransformGeo1.skew}
+ addUserKnob {41 pivot_translate l "Pivot Translate" T TransformGeo1.pivot_translate}
+ addUserKnob {41 pivot_rotate l "Pivot Rotate" T TransformGeo1.pivot_rotate}
+ addUserKnob {20 LocalMatrix l "Local Matrix" n 1}
+ LocalMatrix 0
+ addUserKnob {41 useMatrix l "Specify Matrix" T TransformGeo1.useMatrix}
+ addUserKnob {41 matrix l "" +STARTLINE T TransformGeo1.matrix}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 Creator l "" t "AlphaToPointcloud\nV01" +STARTLINE T "<span style=\"color:#777\"><b>AlphaToPointcloud V01</b> - <a href=\"https://www.linkedin.com/in/hosny-muhammed\" style=\"color:#888;text-decoration: none;\">Hosny Muhammed-Linkedin</a> </span>"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 351
+  ypos -485
+ }
+ Expression {
+  expr0 "A != 0? 1:0"
+  expr1 "A != 0? 1:0"
+  expr2 "A != 0? 1:0"
+  expr3 "A != 0? 1:0"
+  name Expression1
+  xpos 351
+  ypos -445
+ }
+ Dot {
+  name Dot4
+  tile_color 0x323232ff
+  xpos 382
+  ypos -345
+ }
+set N733bfc00 [stack 0]
+ Dot {
+  name Dot3
+  tile_color 0x323232ff
+  xpos 181
+  ypos -345
+ }
+ Expression {
+  expr0 cx
+  expr1 cy
+  expr2 0
+  name Expression3
+  xpos 150
+  ypos -307
+ }
+ Premult {
+  name Premult1
+  xpos 150
+  ypos -277
+ }
+ Dot {
+  name Dot5
+  tile_color 0x323232ff
+  xpos 181
+  ypos -194
+ }
+push $N733bfc00
+ PositionToPoints2 {
+  inputs 2
+  receive_shadow false
+  name PositionToPoints1
+  xpos 351
+  ypos -194
+ }
+ TransformGeo {
+  name TransformGeo1
+  selected true
+  xpos 351
+  ypos -140
+ }
+ Output {
+  name Output1
+  xpos 351
+  ypos -21
+ }
+end_group
